@@ -39,8 +39,6 @@
 (list* lsp-fortran-command lsp-fortran-flags)
 )
 
-(lsp-fortran--ls-command)
-
 (lsp-define-stdio-client lsp-fortran "f90"
                           #'lsp-fortran--get-root nil
                           (lsp-fortran--ls-command))
