@@ -36,7 +36,7 @@
 
 (defun lsp-fortran--ls-command ()
 "Generate the language server startup command."
-(list* lsp-fortran-command lsp-fortran-flags)
+`(lsp-fortran-command ,@lsp-fortran-flags)
 )
 
 (lsp-define-stdio-client lsp-fortran "f90"
