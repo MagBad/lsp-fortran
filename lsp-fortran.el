@@ -52,7 +52,7 @@ CLIENT is the passed variable by :initialize."
   )
 
 (lsp-define-stdio-client lsp-fortran "f90"
-                          #'lsp-fortran--get-root nil
+                          (lsp-fortran--get-root) nil
                           :command-fn #'lsp-fortran--ls-command
                           :initialize #'lsp-fortran--initialize-client)
 
