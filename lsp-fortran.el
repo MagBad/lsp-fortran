@@ -36,12 +36,25 @@
 
 (defun lsp-fortran--ls-command ()
 "Generate the language server startup command."
-`(lsp-fortran-command ,@lsp-fortran-flags)
+`(,lsp-fortran-command ,@lsp-fortran-flags)
 )
+
+(defconst lsp-fortran--handlers
+  '(("window/setStatusBusy" .
+     (lambda (w _p)))
+    ("window/setStatusReady" .
+     (lambda(w _p)))))
+
+(defun lsp-fortran--initialize-client(client)
+  "Notifify the client for a successful startup.
+CLIENT is the passed variable by :initialize."
+  (mapcar #'(lambda (p) (lsp-client-on-notification client (car p) (cdr p))) lsp-fortran--handlers)
+  )
 
 (lsp-define-stdio-client lsp-fortran "f90"
                           #'lsp-fortran--get-root nil
-                          :command-fn #'lsp-fortran--ls-command)
+                          :command-fn #'lsp-fortran--ls-command
+                          :initialize #'lsp-fortran--initialize-client)
 
 (provide 'lsp-fortran)
 ;;; lsp-fortran.el ends here
