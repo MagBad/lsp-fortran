@@ -41,7 +41,7 @@
 
 (lsp-define-stdio-client lsp-fortran "f90"
                           #'lsp-fortran--get-root nil
-                          (lsp-fortran--ls-command))
+                          :command-fn #'lsp-fortran--ls-command)
 
 (provide 'lsp-fortran)
 ;;; lsp-fortran.el ends here
