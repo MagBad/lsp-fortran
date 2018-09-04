@@ -10,6 +10,7 @@
 
 ;;; Code:
 (require 'lsp-mode)
+(require 'lsp-common)
 
 (defcustom lsp-fortran-command "fortls"
   "Command to invoke the fortran lanuage server: https://github.com/hansec/fortran-language-server"
