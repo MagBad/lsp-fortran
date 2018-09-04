@@ -1,4 +1,4 @@
-;; lsp-fortran.el --- Fortran support for lsp-mode
+;;; lsp-fortran.el --- Fortran support for lsp-mode
 
 ;; Copyright (C) 2018 Magnus Badel <magnus.leo93@gmail.com>
 
