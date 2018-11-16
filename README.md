@@ -18,6 +18,18 @@ sudo pip install fortran-language-server
 ```elisp
 (add-to-list 'load-path "<path to lsp-fortran>")
 (require 'lsp-fortran)
+
+;; Or with use-package, refer to https://github.com/MagB93/lsp-fortran/issues/1#issuecomment-439398514
+(use-package lsp-mode
+  :init
+  :hook
+  (f90-mode . lsp-fortran-enable)
+  :config
+  (use-package lsp-ui
+    :ensure f
+    :after flycheck))
+(use-package lsp-fortran
+  :after lsp-mode)
 ```
 
 ## Configuration
