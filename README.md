@@ -44,3 +44,18 @@ For additional options see [Fortran-Language-Server](https://github.com/hansec/f
 ``fortls --help``.
 
 All issues/ideas/elisp-improvements are welcome! Dont' hesitate to open an issue regarding problems or create a PR.
+
+## Using eglot
+
+It is also possible to use [eglot](https://github.com/joaotavora/eglot) instead of ```lsp-mode```.
+Here is the minimal configuration for ```eglot```:
+
+``` elisp
+(use-package eglot
+  :ensure t
+  :config
+  (add-to-list 'eglot-server-programs '(f90-mode . ("fortls")))
+)
+```
+
+Now you just have to call ```M-x eglot``` to activate ```eglot-mode```.
