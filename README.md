@@ -1,3 +1,8 @@
+# DEPRECATED 
+
+Due to [fortls support in emacs-lsp](https://github.com/emacs-lsp/lsp-mode/commit/2c1755d76387bed7c96a9c827753b6dcd9cf1a2c) 
+this package is deprecated and will *not* work as expected. 
+
 # lsp-fortran
 
 Fortran-support for the [lsp-mode](https://github.com/emacs-lsp/lsp-mode) using the 
